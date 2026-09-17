@@ -1,11 +1,37 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+// src/pages/index.astro
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<html lang="ar" dir="rtl">
+  <head>
+    <meta charset="utf-8" />
+    <title>Portfolio - Contact Me</title>
+  </head>
+  <body style="font-family: sans-serif; max-width: 600px; margin: 40px auto; padding: 20px;">
+    <h1>تواصل معي</h1>
+    
+    <form action="https://api.web3forms.com/submit" method="POST" style="display: flex; flex-direction: column; gap: 15px;">
+      <!-- ضع Access Key الخاص بك هنا -->
+      <input type="hidden" name="access_key" value="bc6e2e0d-6b40-4421-9c77-7b9ef11ea8d9" />
+
+      <label>
+        الاسم:
+        <input type="text" name="name" required style="width: 100%; padding: 8px; margin-top: 5px;" />
+      </label>
+
+      <label>
+        البريد الإلكتروني:
+        <input type="email" name="email" required style="width: 100%; padding: 8px; margin-top: 5px;" />
+      </label>
+
+      <label>
+        الرسالة:
+        <textarea name="message" required rows="5" style="width: 100%; padding: 8px; margin-top: 5px;"></textarea>
+      </label>
+
+      <button type="submit" style="padding: 10px; background-color: #0066cc; color: white; border: none; cursor: pointer;">
+        إرسال الرسالة
+      </button>
+    </form>
+  </body>
+</html>
